@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
 namespace CarLotSimulator
@@ -7,6 +8,10 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
+            //Here is where I add a new instance of the CarLot class to the Main method.
+            // It is called lot, which contains the property of a list
+            var lot = new CarLot();
+            
             //TODO
 
             //Create a seperate class file called Car
@@ -40,7 +45,8 @@ namespace CarLotSimulator
             toyota.HonkNoise = "Honk! Honk!";
             toyota.IsDriveable = true;
 
-
+            //Below, I am adding the new instance of Car (toyota) to the lot list
+           lot.Cars.Add(toyota);
 
 
             Car jeep = new Car()
@@ -53,15 +59,36 @@ namespace CarLotSimulator
                 IsDriveable = false
             };
             
+            //Below, I am adding the new instance of Car (jeep) to the lot list
+            lot.Cars.Add(jeep);
 
             Car mazda = new Car(2015, "Mazda", "Genesis", "Vrrrrrrrrrrrrrwalla", "Dum Dum Dum, dobedobdobedoooo", false);
-            
-          
+
+            //Below, I am adding the new instance of Car (Mazda) to the lot list
+            lot.Cars.Add(mazda);
                 
 
+            //Below, I am calling the two class methods for the three instanciated objects  
+            toyota.makeEngineNoise(toyota.EngineNoise);
+            toyota.makeHonkNoise(toyota.HonkNoise);
+
+            jeep.makeEngineNoise(jeep.EngineNoise);
+            jeep.makeHonkNoise(jeep.HonkNoise);
+
+            mazda.makeEngineNoise(mazda.EngineNoise);
+            mazda.makeHonkNoise(mazda.HonkNoise);
+
+            foreach(var vehicle in lot.Cars)
+            {
+                Console.WriteLine($"Year:{vehicle.Year} Make:{vehicle.Make} Model:{vehicle.Model}");
+            }
+
            
-        
-        
+
+
+
+
+
         }// End main method
     }
 }

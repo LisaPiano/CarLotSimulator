@@ -43,5 +43,5 @@ namespace CarLotSimulator
         {
             Console.WriteLine($"{HonkNoise}");
         }
-    }
-}
+    }// end Car class
+}//end namespace
