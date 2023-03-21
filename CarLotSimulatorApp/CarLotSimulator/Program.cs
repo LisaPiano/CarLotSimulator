@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CarLotSimulator
 {
@@ -27,13 +28,38 @@ namespace CarLotSimulator
             //Create a CarLot class
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
-            //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+            //At the end iterate through the list printing each of car's Year, Make, and "l to the console
 
-            var highlander = new Car();
-            var jeep = new Car();
-            var mazda = new Car();
-        
-        
+            var toyota = new Car();
+            
+
+            toyota.Make = "Toyota";
+            toyota.Model = "Highlander";
+            toyota.Year = 2013;
+            toyota.EngineNoise = "Vroooooooooommmmmyyyyyyyyyy!";
+            toyota.HonkNoise = "Honk! Honk!";
+            toyota.IsDriveable = true;
+
+
+
+
+            Car jeep = new Car()
+            {
+                Year = 2013,
+                Make = "Jeep",
+                Model = "Cherokee",
+                EngineNoise = "Verm. Splat. Verm. Splat",
+                HonkNoise = "HOOOOOOOOONK!",
+                IsDriveable = false
+            };
+            
+
+            Car mazda = new Car(2015, "Mazda", "Genesis", "Vrrrrrrrrrrrrrwalla", "Dum Dum Dum, dobedobdobedoooo", false);
+            
+          
+                
+
+           
         
         
         }// End main method

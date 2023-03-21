@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace CarLotSimulator
 {
@@ -11,7 +13,19 @@ namespace CarLotSimulator
     {
         public Car() {
         }
-        public string Name { get; set; }
+
+        public Car(int year, string make, string model, string engineNoise, string honknoise, bool isDriveable)
+        {
+            Year = year;
+            Make = make;
+            Model = model;
+            EngineNoise = engineNoise;
+            HonkNoise = honknoise;
+            IsDriveable = isDriveable;  
+        }
+
+
+        public int Year { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
         public string EngineNoise { get; set; }
